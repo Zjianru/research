@@ -3,6 +3,7 @@ package com.cz.bytebuddy.demo.pojo;
 import lombok.*;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * code desc
@@ -24,6 +25,11 @@ public class User {
     // add method for test dynamic enhancement
 
     public User queryUserByName(String name) {
+        try {
+            Thread.sleep(new Random().nextInt(1000));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return User.builder()
                 .name(name)
                 .id(1L)
