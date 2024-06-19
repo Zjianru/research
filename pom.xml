@@ -11,8 +11,13 @@
     <groupId>com.cz.research</groupId>
     <artifactId>research</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>research</name>
     <description>research</description>
+    <modules>
+        <module>bytecodeResearch</module>
+        <module>bytecodeResearch/bytebuddy-demo</module>
+    </modules>
     <properties>
         <java.version>17</java.version>
     </properties>
