@@ -16,7 +16,7 @@ import java.lang.instrument.Instrumentation;
  *
  * @author Zjianru
  */
-public class DemoAgent {
+public class MethodCostTimeAgent {
 
     /**
      * 代理的入口方法，在应用程序的主方法之前被调用。
