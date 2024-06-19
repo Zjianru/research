@@ -17,6 +17,7 @@
     <modules>
         <module>bytecodeResearch</module>
         <module>bytecodeResearch/bytebuddy-demo</module>
+        <module>bytecodeResearch/miniGateway</module>
     </modules>
     <properties>
         <java.version>17</java.version>
