@@ -1,12 +1,22 @@
-# bytebuddy 02 - 对实例方法进行插桩
+package com.cz.bytebuddy.demo;
 
-**插桩** 一般指的是字节码插桩，即对字节码进行增强或修改
+import com.cz.bytebuddy.demo.pojo.User;
+import net.bytebuddy.ByteBuddy;
+import net.bytebuddy.dynamic.DynamicType;
+import net.bytebuddy.implementation.FixedValue;
+import net.bytebuddy.matcher.ElementMatchers;
 
-**埋点**  插桩是实现埋点的一种方式
+import java.io.File;
+import java.io.IOException;
 
-对方法进行拦截
+/**
+ * code desc
+ *
+ * @author Zjianru
+ */
+public class PileTheExampleMethod {
 
-```java
+    public static void main(String[] args) {
         // 尝试动态生成一个User类的子类
         try {
             // 获取当前运行代码的路径
@@ -27,7 +37,8 @@
             DynamicType.Loaded<User> loaded = unloaded.load(PileTheExampleMethod.class.getClassLoader());
 
             // 创建该类的一个实例，并调用其toString方法，验证拦截器是否生效
-            loaded.getLoaded().newInstance().toString();
+            String string = loaded.getLoaded().newInstance().toString();
+            System.out.println(string);
 
             // 将动态生成的类保存到指定路径
             unloaded.saveIn(new File(path));
@@ -36,5 +47,7 @@
             throw new RuntimeException(e);
         }
 
-```
-拦截器可参考 `net.bytebuddy.matcher.ElementMatchers`
+    }
+
+
+}
