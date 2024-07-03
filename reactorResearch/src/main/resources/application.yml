@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: reactorResearch
+  data:
+    mongodb:
+      database: admin
+      host: localhost
+      password: admin
+      port: 27017
+      username: admin
+  thymeleaf:
+    enabled: true
+    check-template: true
+    check-template-location: true
+    encoding: utf-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+

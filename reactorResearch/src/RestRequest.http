@@ -1,0 +1,13 @@
+### add new data
+POST http://localhost:8080/city
+Content-Type: application/json
+
+{
+  "id": 1,
+  "provinceId": 1,
+  "cityName": "test1",
+  "description": "desc"
+}
+
+### get all data
+GET http://localhost:8080/city
